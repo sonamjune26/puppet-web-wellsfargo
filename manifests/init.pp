@@ -42,9 +42,24 @@
 #
 # Copyright 2018 Your name here, unless otherwise noted.
 #
-class web {
+class web (
 
-class { 'web::install': }
+String $class_package_name = $::web::params::package_name,
+String $class_service_name = $::web::params::service_name,
+String $class_server_ip = $::web::params::server_ip,
+
+) inherits ::web::params{
+
+
+class { 'web::service':
+#        require => Class['web::install']
+        }
+class { 'web::install': 
+#	before => Class['web::service']
+	}
+class { 'web::webconf':}
+class { 'web::docroot':}
 class { 'web::deploy': }
-class { 'web::service': }
+
+Class['web::install'] -> Class['web::webconf'] -> Class['web::docroot'] -> Class['web::deploy'] -> Class['web::service']
 }
