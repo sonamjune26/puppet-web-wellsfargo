@@ -1,0 +1,18 @@
+{
+  "name": "sonam-web",
+  "version": "0.1.0",
+  "author": "Sonam Singh <sonam.june26@gmail.com>",
+  "summary": "This is test module for web services deployment",
+  "license": "Apache-2.0",
+  "source": "https://github.com/sonamjune26/puppet-web-wellsfargo",
+  "project_page": "https://github.com/sonamjune26/puppet-web-wellsfargo",
+  "issues_url": "https://github.com/sonamjune26/puppet-web-wellsfargo/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 1.0.0"
+    }
+  ],
+  "data_provider": null
+}
+
